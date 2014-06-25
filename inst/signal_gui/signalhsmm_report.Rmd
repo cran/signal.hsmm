@@ -1,0 +1,9 @@
+signal.hsmm - report
+========================================================
+
+```{r, echo=FALSE}
+for (i in prediction()) {
+  summary(i)
+  plot(i)
+}
+```
