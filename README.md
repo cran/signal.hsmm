@@ -21,7 +21,7 @@ You can install the latest development version of the code using the `devtools` 
 install.packages("devtools")
 
 library(devtools)
-install_github("signal.hsmm", "michbur")
+install_github("michbur/signal.hsmm")
 ```
 
 After installation GUI can be accessed locally:
@@ -35,7 +35,3 @@ All signal.hsmm functionalities can be also invoked in batch mode, for example:
 ```R
 run_signal.hsmm(benchmark_dat[1:10])
 ```
-
-
-
-

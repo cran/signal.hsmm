@@ -1,16 +1,16 @@
 #put aaaggregation here just to just R CHECK notes
-aaaggregation <- list(c("K", "R", "H"), 
-                      c("V", "I", "L", "M", "F", "W", "C", "U"),
-                      c("S", "T", "N", "Q"), 
-                      c("D", "E", "A", "P", "Y", "G"))
+aaaggregation <- list(c("k", "r", "h"), 
+                      c("v", "i", "l", "m", "f", "w", "c", "u"),
+                      c("s", "t", "n", "q"), 
+                      c("d", "e", "a", "p", "y", "g"))
 names(aaaggregation) = c("1", "2", "3", "4")
 
 #' @name benchmark_dat
 #' @title Benchmark data set for signal.hsmm
-#' @description This data set lists eukaryotic proteins added to UniProt database release 
+#' @description Lists eukaryotic proteins added to UniProt database release 
 #' 2014_07 between 2011 and 2014 (140 proteins with signal peptide and 280 randomly 
 #' sampled proteins without signal peptide). 
-#' All proteins were used in benchmark test comparing the performance
+#' All proteins were used in the benchmark test to compare the performance
 #' of signal.hsmm and other signal peptide predictors.
 #' @docType data
 #' @usage benchmark_dat
@@ -27,6 +27,7 @@ NULL
 #' physicochemical properties important in  the recognition of signal peptide.
 #' @docType data
 #' @usage aaaggregation
-#' @format a list of length four containing one-letter name of amino acid
+#' @format a list of length four. Each element contains a \code{character} vector 
+#' of amino acid names (one-letter abbreviations).
 #' @keywords datasets
 NULL
