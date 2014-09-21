@@ -10,7 +10,7 @@
 #' @return An object of class \code{hsmm_pred_list}.
 #' @details Function \code{signal.hsmm} returns respectively probability of presence of 
 #' signal peptide, start of signal peptide and the probable cleavage site localization.
-#' If input consists from more than one sequence, result is a data.frame where each column
+#' If input consists of more than one sequence, result is a data.frame where each column
 #' contains above values for different proteins.
 #' @note Currently start of signal peptide is naively set as 1 amino acid.
 #' @export
@@ -89,11 +89,10 @@ run_signal.hsmm <- function(test_data) {
         class(test_data) == "data.frame" || class(test_data) == "matrix")
     stop("Input data must have class 'SeqFastaAA', 'character' or 'list'.")
   
-  
   if(class(test_data) == "SeqFastaAA" || 
        class(test_data) == "character") {
     #single input
-    decisions <- signal.hsmm_decision(test_data, aa_group = aaaggregation, 
+    decisions <- signal.hsmm_decision(test_data, aa_group = get("aaaggregation"), 
                                       pipar = signal.hsmm_model[["pipar"]], 
                                       tpmpar = signal.hsmm_model[["tpmpar"]], 
                                       od = signal.hsmm_model[["od"]], 
@@ -124,6 +123,9 @@ signal.hsmm_decision <- function(prot, aa_group, pipar, tpmpar,
     if (length(prot) == 1)
       stop("Input sequence is too short.")
   }
+  if(!is_protein(prot))
+    stop("Atypical aminoacids detected, analysis cannot be performed.")
+  
   deg_sample <- as.numeric(degenerate(toupper(prot)[1L:50], aa_group))
   #remove atypical amino acids
   deg_sample <- na.omit(deg_sample)
@@ -137,7 +139,7 @@ signal.hsmm_decision <- function(prot, aa_group, pipar, tpmpar,
   #get probabilities of no signal peptide model
   prob.non <- Reduce(function(x, y) x + overall_probs_log[y], deg_sample[1L:c_site], 0)
   prob.total <- exp(prob.signal - prob.non)
-  res <- list(sp_probability = unname(1 - 1/(1 + prob.total)), 
+  res <- list(sp_probability = unname(1 - 1/(1 + prob.total)),
               sp_start = 1,
               sp_end = c_site,
               struc = viterbi_path,
@@ -158,10 +160,12 @@ signal.hsmm_decision <- function(prot, aa_group, pipar, tpmpar,
 
 #' GUI for signal.hsmm
 #'
-#' A graphical user interface for predicting presence of signal peptides/
+#' A graphical user interface for predicting presence of signal peptides.
 #' @return null.
 #' @export
 #' @seealso \code{\link{run_signal.hsmm}}
+#' @note
+#' Any ad-blocking software may be cause of malfunctions. 
 #' @examples
 #' \donttest{
 #' gui_signal.hsmm()
