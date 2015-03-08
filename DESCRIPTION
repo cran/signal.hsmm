@@ -1,9 +1,9 @@
 Package: signal.hsmm
 Type: Package
 Title: Predict Presence of Signal Peptides
-Version: 1.2
+Version: 1.2.1
 LazyData: true
-Date: 2014-09-21
+Date: 2015-03-08
 Authors@R: c(
     person("Michal", "Burdukiewicz",
     email = "michalburdukiewicz@gmail.com", role = c("cre", "aut")),
@@ -19,8 +19,8 @@ Imports: biogram, seqinr, shiny
 Suggests: knitr, markdown, shinyAce
 NeedsCompilation: no
 Repository: CRAN
-Packaged: 2015-03-05 11:25:14 UTC; Michal
+Packaged: 2015-03-08 07:56:43 UTC; ripley
 Author: Michal Burdukiewicz [cre, aut],
   Piotr Sobczyk [aut]
 Maintainer: Michal Burdukiewicz <michalburdukiewicz@gmail.com>
-Date/Publication: 2015-03-05 15:16:42
+Date/Publication: 2015-03-08 08:57:59

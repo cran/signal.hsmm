@@ -24,8 +24,7 @@ summary(few_predictions[[1]])
 plot(few_predictions[[1]])
 
 #have fun with GUI
-\donttest{
-gui_signal.hsmm()
-}
+if(interactive())
+  gui_signal.hsmm()
 }
 

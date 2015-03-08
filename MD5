@@ -1,4 +1,4 @@
-2c0b57a7bf652964e86e20d84b741125 *DESCRIPTION
+a0b852ee5cd1efc87da2212c3eae7c90 *DESCRIPTION
 b32c8511e694723020f5551b23a4d0bd *NAMESPACE
 48b5cf85ee653b213aa0fcd6a97c3f2c *R/datasets.R
 a31bf1ab6c5f162de9897c91f7b296db *R/duration_viterbi.R
@@ -35,7 +35,7 @@ f20839e64176691095935b9f04e26fa4 *man/pred2df.Rd
 6df8792d62259f678e9fbb875550a768 *man/read_txt.Rd
 8f4b575462ce45a4aa645728bd1be6fe *man/read_uniprot.Rd
 86fba519df20f471bad622e86081f48b *man/run_signal.hsmm.Rd
-76aa266a1aa61fe54dc653914b79c1e4 *man/signal.hsmm.Rd
+309479e84ef82e52418530d5ca76029c *man/signal.hsmm.Rd
 eb533b2182c4a1cdd451a50fca9cc725 *man/summary.hsmm_pred.Rd
 2e8d4e08edfbcd481ad1384eaabad129 *man/summary.hsmm_pred_list.Rd
 ba4a386f96ee27fd5c506c957187d784 *man/train_hsmm.Rd
